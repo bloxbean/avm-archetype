@@ -16,7 +16,7 @@ try {
 
     def version = new URL ("https://bloxbean.github.io/aion4j-release/aion4j-maven-plugin").getText([connectTimeout: 3000, readTimeout: 3000])
 
-    if(version.contains("<"))
+    if(version.contains("<") || version.length() > 25)
         return;
 
     pomContent = pomContent.replace("x.x.x", version.trim())

@@ -1,6 +1,6 @@
 package ${package};
 
-import avm.BlockchainRuntime;
+import avm.Blockchain;
 import org.aion.avm.tooling.abi.Callable;
 
 public class HelloAvm
@@ -9,7 +9,7 @@ public class HelloAvm
 
     @Callable
     public static void sayHello() {
-        BlockchainRuntime.println("Hello Avm");
+        Blockchain.println("Hello Avm");
     }
 
     @Callable
@@ -19,14 +19,14 @@ public class HelloAvm
 
     @Callable
     public static String getString() {
-        BlockchainRuntime.println("Current string is " + myStr);
+        Blockchain.println("Current string is " + myStr);
         return myStr;
     }
 
     @Callable
     public static void setString(String newStr) {
         myStr = newStr;
-        BlockchainRuntime.println("New string is " + myStr);
+        Blockchain.println("New string is " + myStr);
     }
 
 }
