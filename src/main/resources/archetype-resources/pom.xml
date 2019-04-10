@@ -22,15 +22,39 @@
     <dependencies>
         <dependency>
             <groupId>org.aion</groupId>
-            <artifactId>avm-lib</artifactId>
+            <artifactId>avm-api</artifactId>
             <version>0.0.0</version>
             <scope>system</scope>
-            <systemPath>${avm.lib.dir}/avm.jar</systemPath>
+            <systemPath>${avm.lib.dir}/org-aion-avm-api.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>org.aion</groupId>
+            <artifactId>avm-userlib</artifactId>
+            <version>0.0.0</version>
+            <scope>system</scope>
+            <systemPath>${avm.lib.dir}/org-aion-avm-userlib.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.aion</groupId>
+            <artifactId>avm-tooling</artifactId>
+            <version>0.0.0</version>
+            <scope>system</scope>
+            <systemPath>${avm.lib.dir}/org-aion-avm-tooling.jar</systemPath>
+        </dependency>
+
+        <!-- Test dependencies -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Don't change the following dependency. This is required to compile & run test cases. The avm.jar for the project will be
+        installed into the local maven repository during mvn initialize phase. -->
+        <dependency>
+            <groupId>${groupId}.${artifactId}</groupId>
+            <artifactId>avm</artifactId>
+            <version>${version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -80,6 +104,26 @@
                         <version>3.0.0-M3</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>2.5</version>
+                <executions>
+                    <execution>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                        <configuration>
+                            <groupId>${groupId}.${artifactId}</groupId>
+                            <artifactId>avm</artifactId>
+                            <version>${version}</version>
+                            <packaging>jar</packaging>
+                            <file>${avm.lib.dir}/avm.jar</file>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
