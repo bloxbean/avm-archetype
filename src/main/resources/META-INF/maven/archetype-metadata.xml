@@ -9,6 +9,9 @@
     <requiredProperty key="aion4j-maven-plugin-version">
       <defaultValue>x.x.x</defaultValue>
     </requiredProperty>
+    <requiredProperty key="contractName">
+      <defaultValue>HelloAvm</defaultValue>
+    </requiredProperty>
   </requiredProperties>
 
   <fileSets>

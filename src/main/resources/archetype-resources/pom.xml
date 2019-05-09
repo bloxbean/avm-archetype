@@ -16,7 +16,7 @@
         <aion4j.plugin.version>${aion4j-maven-plugin-version}</aion4j.plugin.version>
         <avm.lib.dir>${project.basedir}/lib</avm.lib.dir>
 
-        <contract.main.class>${package}.HelloAvm</contract.main.class>
+        <contract.main.class>${package}.${contractName}</contract.main.class>
     </properties>
 
     <dependencies>
