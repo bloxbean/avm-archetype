@@ -3,14 +3,14 @@ Maven archetype which is used to generate Aion AVM based smart contract project 
 ## Usage:
 
 ```
-$> mvn archetype:generate -DarchetypeGroupId=org.aion4j -DarchetypeArtifactId=avm-archetype -DarchetypeVersion=0.19
+$> mvn archetype:generate -DarchetypeGroupId=org.aion4j -DarchetypeArtifactId=avm-archetype -DarchetypeVersion=0.20
 ```
 
-### Current archetype version: 0.19
+### Current archetype version: 0.20
 
 To customize, contract class name, pass -DcontractName argument.
 ```
-$> mvn archetype:generate -DarchetypeGroupId=org.aion4j -DarchetypeArtifactId=avm-archetype -DarchetypeVersion=0.19 -DcontractName=CounterContract
+$> mvn archetype:generate -DarchetypeGroupId=org.aion4j -DarchetypeArtifactId=avm-archetype -DarchetypeVersion=0.20 -DcontractName=CounterContract
 ```
 
 - In the generated project's pom.xml, change **aion4j.plugin.version** property to latest version of [aion4j-maven-plugin](https://github.com/bloxbean/aion4j-maven-plugin)
