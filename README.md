@@ -3,7 +3,7 @@ Maven archetype which is used to generate Aion AVM based smart contract project 
 ## Usage:
 
 ```
-$> mvn archetype:generate -DarchetypeGroupId=org.aion4j -DarchetypeArtifactId=avm-archetype -DarchetypeVersion=<avm_archtype_version>
+$> mvn archetype:generate -DarchetypeGroupId=org.aion4j -DarchetypeArtifactId=avm-archetype -DarchetypeVersion=<avm_archetype_version>
 ```
 
 ### Current archetype version: 0.30
